@@ -19,8 +19,15 @@
                     </section>
                     <hr>
                     
-                    <form action="" method="post">
+                    <form action="{% url 'cadastro' %}" method="POST"> {% csrf_token %} 
                         <h2 class="fonte-destaque1">Cadastre-se</h2>
+                        {% if messages %}
+                            {% for message in messages %}
+                                <section class="alert {{message.tags}}">
+                                    {{message}}
+                                </section>
+                            {% endfor %}
+                        {% endif %}
                         <br>
                         <label for="">Username</label>
                         <input type="text" name="username" id="" class="form-control" placeholder="Username ...">
