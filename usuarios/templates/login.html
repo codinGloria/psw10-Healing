@@ -2,8 +2,8 @@
 {% load static %}
 
 {% block 'head' %}
-    <link rel="stylesheet" href="{% static 'usuarios/css/usuarios.css'%}"/>
-{% endblock %}
+    <link rel="stylesheet" href="{% static 'usuarios/css/usuarios.css' %}">
+{% endblock 'head' %}
 
 {% block 'body' %}
 
@@ -19,9 +19,10 @@
                     </section>
                     <hr>
                     
-                    <form action="{% url 'cadastro' %}" method="POST"> {% csrf_token %} 
-                        <h2 class="fonte-destaque1">Cadastre-se</h2>
+                    <form action="{% url 'login' %}" method="POST"> {% csrf_token %}
+                        <h2 class="fonte-destaque1">Logar</h2>
                         {% if messages %}
+                            <br>
                             {% for message in messages %}
                                 <section class="alert {{message.tags}}">
                                     {{message}}
@@ -32,23 +33,14 @@
                         <label for="">Username</label>
                         <input type="text" name="username" id="" class="form-control" placeholder="Username ...">
                         <br>
-                        <label for="">E-mail</label>
-                        <input type="text" name="email" id="" placeholder="email@email.com" class="form-control">
-                        <br>
-                        <div class="row">
-                            <div class="col-md">
-                                <label for="">Senha</label>
-                                <input type="password" name="senha" class="form-control" placeholder="Digite sua senha ...">
-                            </div>
-                            <div class="col-md">
-                                <label for="">Confirmar senha</label>
-                                <input type="password" name="confirmar_senha" class="form-control" placeholder="Digite sua senha novamente ..." id="">
-                            </div>
-                        </div>
+                        
+                       
+                        <label for="">Senha</label>
+                        <input type="password" name="senha" class="form-control" placeholder="Digite sua senha ...">
                         <br>
 
-                        <input type="submit" value="Cadastrar" class="btn btn-success btn-dark-color">
-                        <a href="{% url 'login' %}" class="btn btn-dark-color-outline">Já possuo uma conta</a>
+                        <input type="submit" value="Logar" class="btn btn-success btn-dark-color">
+                        <a href="{% url 'cadastro' %}" class="btn btn-dark-color-outline">Não possuo uma conta</a>
                     </form>
                 </div>
 
@@ -60,5 +52,6 @@
             </div>
         </div>
     </div>
+
 
 {% endblock 'body' %}
