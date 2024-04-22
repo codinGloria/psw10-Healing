@@ -4,6 +4,7 @@
         "cedula",
         "descricao",
         "horario",
+        "horarios",
         "usuarios"
     ]
 }
