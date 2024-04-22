@@ -62,7 +62,7 @@ Cadastro médico
 
 ## Funcionalidades a serem adicionadas
 
-- Melhor visualização de mês e dia na página 'pacientes/escolher_horario/'
+- Melhor visualização de mês e dia na página 'pacientes/escolher_horario/' ✅
 - Filtros da página 'pacientes/minhas_consultas/'
 - Área de lembretes na página 'pacientes/home/'
 - Botão de cancelar consulta para os pacientes
