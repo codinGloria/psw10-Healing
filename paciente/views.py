@@ -44,6 +44,8 @@ def agendar_horario(request, id_data_aberta):
         return redirect('/pacientes/minhas_consultas/')
 
 def minhas_consultas(request):
+    if (request.method == "GET"):
+        
     minhas_consultas = Consulta.objects.filter(paciente=request.user).filter(data_aberta__data__gte=datetime.now())
     return render(request, 'minhas_consultas.html', {'minhas_consultas': minhas_consultas, 'eh_medico': eh_medico(request.user)})
 

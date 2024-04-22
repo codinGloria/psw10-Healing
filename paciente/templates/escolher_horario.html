@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load humanize %}
 
 {% block 'head' %}
 
@@ -48,11 +49,11 @@
                             <div class='selecionar-dia'>
                             <div class="header-dias">
                                 <span class="mes">
-                                    {{data_aberta.data.month}}
+                                    {{data_aberta.data|date:"F"}}
                                 </span>
                                 
                                 <span class="dia-semana">
-                                    {{data_aberta.data.weekday}}
+                                    {{data_aberta.data|date:"l"}}
                                 </span>
                             </div>
             
