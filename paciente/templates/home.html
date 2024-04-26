@@ -69,11 +69,29 @@
             <p style="font-size: 25px" class="p-bold">Lembretes</p>
 
             <p class="bg-main-lembrete">
-                <span class="p-bold"><i class="bi bi-exclamation-triangle-fill icon-differential"></i>&nbsp&nbsp Consulta com Pedro Sampario em 7 dias.</span>
+                {% if minhas_consultas %}
+                    {% for consulta in minhas_consultas %}
+                        {% if consulta.data_aberta.data and consulta.status != "F" and consulta.status != "C" %}
+                            <span class="p-bold">
+                                <i class="bi bi-calendar-check icon-differential"></i>
+                                &nbsp;&nbsp;
+                                {% if consulta.diferenca_dias is not None %}
+                                    {% if consulta.diferenca_dias <= 0 %}
+                                        Consulta com {{ consulta.data_aberta.user }} em breve. Fique atento!
+                                    {% else %}
+                                        Consulta com {{ consulta.data_aberta.user }} em {{ consulta.diferenca_dias }} dias.
+                                    {% endif %}
+                                {% else %}
+                                    Sem data de consulta definida.
+                                {% endif %}
+                            </span><br><br>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
             </p>
 
 
-            
+        
         </div>
     </div>
 </div>
