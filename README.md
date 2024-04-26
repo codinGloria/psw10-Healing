@@ -25,11 +25,10 @@ Acesse o arquivo de slides contendo as paginas principais do projeto :]
 ## Funcionalidades a serem adicionadas
 
 - Melhor visualização de mês e dia na página 'pacientes/escolher_horario/' ✅
-- Filtros da página 'pacientes/minhas_consultas/'
+- Filtros da página 'pacientes/minhas_consultas/' ✅
+- Botão de cancelar consulta para os pacientes ✅
+- Dashboard de desempenho médico ✅
 - Área de lembretes na página 'pacientes/home/'
-- Botão de cancelar consulta para os pacientes
-- Validação de segurança em todo o código
-- Dashboard de desempenho médico
 
 ## Tecnologias
 
